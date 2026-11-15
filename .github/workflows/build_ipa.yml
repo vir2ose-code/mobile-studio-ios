@@ -10,7 +10,7 @@ on:
 jobs:
   build-ipa:
     name: Build Mobile Studio .ipa (Sideloadly & AltStore Ready)
-    runs-on: macos-13
+    runs-on: macos-15
 
     steps:
       - name: Checkout Code
