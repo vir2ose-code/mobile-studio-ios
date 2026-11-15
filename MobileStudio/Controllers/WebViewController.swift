@@ -14,13 +14,9 @@ class WebViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, W
     }
 
     override var prefersStatusBarHidden: Bool {
-        // Automatically hide status bar in landscape on iPhone to grant 100% full screen for all 10 tracks
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            if let orientation = view.window?.windowScene?.interfaceOrientation {
-                return orientation.isLandscape
-            }
-        }
-        return false
+        // Hide iOS status bar (clock, battery, WiFi) completely across iPad and iPhone
+        // so top navigation, hamburger menu and language flags are 100% accessible and unobstructed
+        return true
     }
 
     override var prefersHomeIndicatorAutoHidden: Bool {
