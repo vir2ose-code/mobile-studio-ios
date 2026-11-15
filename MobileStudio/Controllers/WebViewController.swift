@@ -54,7 +54,9 @@ class WebViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, W
 
         // Preferences
         let preferences = WKPreferences()
-        preferences.isElementFullscreenEnabled = true
+        if #available(iOS 15.4, *) {
+            preferences.isElementFullscreenEnabled = true
+        }
         configuration.preferences = preferences
 
         // JavaScript Bridge: Native Haptics & Audio Hooks
